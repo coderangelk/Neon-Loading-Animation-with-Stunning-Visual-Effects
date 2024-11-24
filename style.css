@@ -1,0 +1,101 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+.neon-loader {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    z-index: 100;
+}
+
+.neon-ring {
+    width: 120px;
+    height: 120px;
+    border: 6px solid transparent;
+    border-radius: 50%;
+    margin: 10px;
+    position: absolute;
+    animation: neon-spin 3s linear infinite, glow 1.5s ease-in-out infinite alternate;
+    box-shadow: 0 0 30px 3px #6a00ff, 0 0 40px 6px #6a00ff;
+}
+
+.neon-ring:nth-child(1) {
+    border-top: 6px solid #6a00ff;
+    animation: neon-spin 3s linear infinite, glow1 2s ease-in-out infinite alternate;
+}
+
+.neon-ring:nth-child(2) {
+    width: 140px;
+    height: 140px;
+    border-top: 6px solid #00ffcc; 
+    animation: neon-spin 3s linear infinite, glow2 2s ease-in-out infinite alternate;
+}
+
+.neon-ring:nth-child(3) {
+    width: 160px;
+    height: 160px;
+    border-top: 6px solid #ff00ff; 
+    animation: neon-spin 3s linear infinite, glow3 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow1 {
+    0% {
+        box-shadow: 0 0 5px #6a00ff, 0 0 10px #6a00ff, 0 0 40px #6a00ff;
+    }
+    100% {
+        box-shadow: 0 0 20px #6a00ff, 0 0 40px #6a00ff, 0 0 80px #6a00ff;
+    }
+}
+
+@keyframes glow2 {
+    0% {
+        box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 40px #00ffcc;
+    }
+    100% {
+        box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc, 0 0 80px #00ffcc;
+    }
+}
+
+@keyframes glow3 {
+    0% {
+        box-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 40px #ff00ff;
+    }
+    100% {
+        box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff;
+    }
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
